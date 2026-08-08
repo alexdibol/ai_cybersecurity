@@ -1,0 +1,487 @@
+\chapter{What Attackers Try to Achieve}
+
+\begin{learningobjectives}
+By the end of this chapter, the reader should be able to:
+\begin{itemize}
+    \item explain attacker objectives in business terms rather than technical jargon;
+    \item distinguish discovery, access, expansion, action, and monetization as conceptual stages of a cyber event;
+    \item connect attacker objectives to confidentiality, integrity, availability, authentication, and authorization;
+    \item identify how cyber events can affect trading, payments, asset management, custody, exchanges, and market infrastructure;
+    \item assess cyber exposure pragmatically without learning operational attack techniques.
+\end{itemize}
+\end{learningobjectives}
+
+\section{From ``Hacking'' to Business Objectives}
+
+The word ``hacking'' is often used too broadly. It can refer to curiosity, technical experimentation, criminal intrusion, fraud, espionage, sabotage, or unauthorized access. For a finance professional, this ambiguity is not helpful. The more useful question is not ``How do hackers hack?'' but rather:
+
+\begin{quote}
+What outcome is an unauthorized actor trying to create, and what financial process could be affected if that outcome is achieved?
+\end{quote}
+
+This framing immediately makes the topic more practical. Attackers generally seek one or more business outcomes. They may want to obtain information, impersonate a user, redirect money, manipulate data, interrupt operations, preserve unauthorized access, extort the institution, or create reputational damage. In many cases, the technical method matters less to a finance executive than the business consequence.
+
+Consider a broker-dealer. An attacker may seek access to trader credentials, client information, settlement instructions, research systems, or internal communications. The financial risk is not ``the password'' itself. The risk is what that identity allows the user to do. A privileged account may permit trade entry, approval, transfer of funds, modification of limits, or access to confidential information.
+
+The same principle applies to an asset manager. If unauthorized access affects a portfolio administrator, the concern may be inaccurate positions, manipulated pricing data, false cash balances, or fraudulent instructions to a custodian. If access affects an investor-relations account, the concern may be client data, communications, or reputational harm.
+
+The attacker objective must therefore be translated into an institutional objective:
+
+\begin{equation}
+\text{Technical Target}
+\rightarrow
+\text{Business Capability}
+\rightarrow
+\text{Financial Exposure}.
+\end{equation}
+
+This is the core discipline of financial cyber-risk analysis.
+
+\section{A Safe Conceptual Lifecycle}
+
+To understand attacker behavior without teaching operational intrusion techniques, it is useful to use a simplified lifecycle:
+
+\begin{equation}
+\text{Discover}
+\rightarrow
+\text{Enter}
+\rightarrow
+\text{Expand}
+\rightarrow
+\text{Act}
+\rightarrow
+\text{Monetize or Disrupt}.
+\end{equation}
+
+These stages are conceptual. They describe intent and progression, not a technical recipe.
+
+\subsection{Discover}
+
+At the discovery stage, the unauthorized actor attempts to understand the environment. The questions are basic: What systems exist? Which services are exposed? Which identities are important? Which vendors or external platforms support the institution? Which business processes appear valuable?
+
+A finance professional should interpret discovery as an exposure problem. If an institution has unnecessary internet-facing systems, poorly documented applications, forgotten user accounts, or old administrative interfaces, the attack surface is larger.
+
+For a financial institution, asset inventory is therefore not a bureaucratic exercise. It is a defensive control. If management does not know that an old reporting server is still operating, it cannot patch it, monitor it, restrict access, or retire it.
+
+\subsection{Enter}
+
+The next conceptual stage is unauthorized entry. Entry may result from stolen credentials, weak authentication, unsafe software, human error, or misconfiguration.
+
+From a risk-management perspective, the relevant issue is which control failed. Was authentication too weak? Was a user deceived? Was a system unnecessarily exposed? Was access granted too broadly? Was a third party compromised?
+
+The practical question is not merely ``How did they get in?'' but also ``Which business capability became available after entry?'' Entry into a low-privilege public website is different from entry into a privileged settlement system.
+
+\subsection{Expand}
+
+Once access exists, an unauthorized actor may try to reach additional systems, identities, or information. In finance, expansion is particularly important because institutions are interconnected.
+
+A user may have access to email, document repositories, market-data terminals, order-management systems, payment platforms, cloud storage, and internal dashboards. Excessive privilege increases the chance that one compromised identity can affect multiple processes.
+
+This is why least privilege and segregation of duties are foundational controls. If one account can initiate, approve, and settle a large transaction, a single identity failure has much greater financial significance.
+
+\subsection{Act}
+
+The action stage is where the attacker attempts to create the business consequence. Possible objectives include reading confidential data, changing information, initiating unauthorized transactions, interrupting services, deleting information, or locking users out of systems.
+
+For finance students, this is the stage where cyber risk becomes operational risk.
+
+\subsection{Monetize or Disrupt}
+
+The final objective may be direct financial gain, extortion, resale of information, market manipulation, fraud, sabotage, or strategic disruption.
+
+Not all attacks are monetized immediately. Some may seek information or long-term access. Others may simply disrupt operations. Financial institutions must therefore avoid assuming that every attacker behaves like a conventional thief.
+
+\section{The CIA Model in Financial Practice}
+
+Cybersecurity often begins with three core objectives: confidentiality, integrity, and availability.
+
+\subsection{Confidentiality}
+
+Confidentiality means that information is accessible only to authorized users.
+
+In a financial institution, confidential information may include:
+
+\begin{itemize}
+    \item client identities and account information;
+    \item trading positions;
+    \item pending orders;
+    \item research reports before publication;
+    \item merger and acquisition information;
+    \item risk limits;
+    \item pricing models;
+    \item settlement instructions;
+    \item employee records;
+    \item regulatory submissions.
+\end{itemize}
+
+A breach of confidentiality may create direct legal obligations, but it can also create economic advantage for an unauthorized party. Knowledge of pending trades, liquidity needs, or corporate transactions can be highly valuable.
+
+For this reason, confidentiality is not only a privacy concept. It can be a market-integrity and fiduciary issue.
+
+\subsection{Integrity}
+
+Integrity means that information remains accurate and has not been improperly altered.
+
+For many financial processes, integrity is more important than secrecy.
+
+Consider a pricing file used to value a portfolio. The data may not be highly confidential, but if one price is altered materially, the portfolio's net asset value may become wrong. If a settlement instruction is changed, money may go to the wrong destination. If a risk limit is modified, the desk may operate outside approved boundaries.
+
+Integrity risk is therefore central to valuation, accounting, settlement, collateral, risk management, and regulatory reporting.
+
+\subsection{Availability}
+
+Availability means that systems and information are accessible when needed.
+
+Financial markets are time-sensitive. An unavailable trading system during a volatile market can create immediate loss. A payment platform that cannot process instructions before cutoff may create liquidity and settlement risk. A custodian interface that becomes unavailable near month-end may delay reconciliation and reporting.
+
+Availability risk can therefore become market risk, liquidity risk, or reputational risk.
+
+\begin{risklens}
+For financial institutions, confidentiality, integrity, and availability should not be discussed abstractly. Each property should be mapped to a specific business process and a plausible loss channel.
+\end{risklens}
+
+\section{The Most Common Business Objectives of Attackers}
+
+A useful finance-oriented classification includes six broad objectives.
+
+\subsection{1. Steal Money}
+
+The most obvious objective is direct financial theft.
+
+Examples may involve unauthorized payments, fraudulent transfers, manipulated beneficiary details, or abuse of payment credentials. The financial consequence is immediate and measurable.
+
+However, theft is rarely a pure cybersecurity problem. It usually intersects with payment controls, approval processes, reconciliation, transaction limits, and fraud monitoring.
+
+A strong institution therefore uses multiple layers:
+
+\begin{equation}
+\text{Identity Control}
++
+\text{Transaction Control}
++
+\text{Approval Control}
++
+\text{Reconciliation}
++
+\text{Monitoring}.
+\end{equation}
+
+If one layer fails, another should still reduce the loss.
+
+\subsection{2. Steal Information}
+
+Information can be monetized indirectly.
+
+Client lists, trading strategies, acquisition plans, source code, pricing models, or internal research may have economic value. An attacker may sell the information, use it for fraud, or exploit it strategically.
+
+In investment banking, confidential transaction information is particularly sensitive. In asset management, portfolio information and client identities may matter. In private banking, the combination of wealth data and personal information can create severe privacy and fraud consequences.
+
+\subsection{3. Impersonate an Authorized User}
+
+Identity is one of the most valuable assets in modern finance.
+
+An attacker may not need to break a complex system if the institution already trusts a compromised identity. Once impersonation succeeds, normal systems may execute unauthorized actions because the request appears legitimate.
+
+This is why multifactor authentication, device controls, privileged-access management, transaction approvals, and behavioral monitoring matter.
+
+The practical financial question is:
+
+\begin{quote}
+What can this identity do if it is misused?
+\end{quote}
+
+\subsection{4. Manipulate Data}
+
+Data manipulation may be subtle and dangerous.
+
+A manipulated transaction record, risk parameter, pricing input, collateral value, or position file can distort decisions without creating an immediate outage.
+
+This is particularly relevant in financial markets because decisions depend on data quality. A corrupted price feed may influence valuation. A modified position file may distort hedging. An altered counterparty record may affect credit limits.
+
+Data integrity controls should therefore be treated as financial controls.
+
+\subsection{5. Disrupt Operations}
+
+Some attacks aim to make systems unavailable.
+
+For a consumer business, temporary downtime may be inconvenient. For financial infrastructure, the impact can be systemic.
+
+An exchange, clearing platform, payment network, or large broker-dealer may operate under strict time constraints. An outage can delay settlement, prevent hedging, create margin uncertainty, or reduce market liquidity.
+
+The cost of disruption can be represented approximately as:
+
+\begin{equation}
+L_{\text{outage}}
+=
+L_{\text{lost revenue}}
++
+L_{\text{market exposure}}
++
+L_{\text{operational recovery}}
++
+L_{\text{client impact}}
++
+L_{\text{regulatory consequences}}.
+\end{equation}
+
+\subsection{6. Extort or Create Strategic Pressure}
+
+An attacker may threaten to publish information, keep systems unavailable, or create uncertainty unless the institution pays or takes some action.
+
+The strategic difficulty is that management must make decisions under pressure and incomplete information. This becomes a crisis-governance problem involving legal, operational, financial, communications, and sometimes law-enforcement considerations.
+
+\section{Why Simple Weaknesses Matter}
+
+Popular culture often associates cyber risk with sophisticated technical exploits. In practice, many damaging incidents begin with ordinary weaknesses.
+
+Examples include:
+
+\begin{itemize}
+    \item reused passwords;
+    \item excessive user privileges;
+    \item forgotten accounts;
+    \item outdated software;
+    \item poorly configured cloud storage;
+    \item weak vendor controls;
+    \item untested backups;
+    \item incomplete logging;
+    \item unclear ownership of systems;
+    \item inadequate employee verification procedures.
+\end{itemize}
+
+For financial firms, this creates a governance lesson. Cyber resilience is often less about possessing the most advanced technology and more about executing basic controls consistently.
+
+A large bank may have sophisticated security platforms but still suffer from an old account that was never disabled. An asset manager may have excellent encryption but weak processes for verifying changes to settlement instructions. A fintech may have modern cloud infrastructure but poor segregation of duties.
+
+\section{Historical Patterns Relevant to Finance}
+
+Without discussing operational techniques, it is useful to understand several recurring patterns that have affected financial institutions.
+
+\subsection{Credential Abuse}
+
+Unauthorized actors frequently seek valid credentials because legitimate identities can bypass many technical barriers.
+
+The financial response should emphasize strong authentication, least privilege, session monitoring, and transaction controls.
+
+\subsection{Social Engineering}
+
+Humans can be manipulated into revealing information or authorizing actions.
+
+In finance, this risk is especially important because employees frequently receive urgent requests involving payments, counterparties, executives, clients, or transactions.
+
+The defense is procedural as much as technical: independent verification, call-back procedures, dual approval, and skepticism toward urgency.
+
+\subsection{Exposed or Misconfigured Systems}
+
+Systems may inadvertently be accessible beyond their intended audience.
+
+For financial institutions, the control response includes asset inventory, secure configuration, vulnerability management, and periodic review of public exposure.
+
+\subsection{Malicious Software}
+
+Unauthorized software can create persistence, steal information, encrypt files, or disrupt systems.
+
+From the finance perspective, the question is not how such software works internally. The relevant issues are prevention, segmentation, endpoint monitoring, backups, restoration, and business continuity.
+
+\subsection{Third-Party Compromise}
+
+Financial institutions rely heavily on vendors: market data, cloud services, pricing, payments, communications, software, custody, and analytics.
+
+A vendor failure can become the institution's operational problem even if the institution itself was not directly compromised.
+
+\section{Financial Practice: The Payment Approval Problem}
+
+Consider a fictional corporate bank.
+
+A client submits a payment instruction for \$8 million. The bank has three relevant controls:
+
+\begin{enumerate}
+    \item the user must authenticate;
+    \item the payment requires approval by a second authorized employee;
+    \item high-value transfers trigger additional verification.
+\end{enumerate}
+
+Suppose one employee account is compromised. The attacker may have access to the initiation function, but the second approval remains a barrier.
+
+If the attacker also compromises a second identity, the risk increases. If the transaction exceeds a threshold and requires independent verification, a third control remains.
+
+This illustrates defense in depth.
+
+The institution should not ask only whether authentication was secure. It should ask whether a single identity failure can directly create a large financial loss.
+
+\begin{risklens}
+The financial relevance of a cyber weakness is proportional not only to the probability of unauthorized access but also to the economic authority attached to the compromised identity.
+\end{risklens}
+
+\section{Financial Practice: The Asset-Management Problem}
+
+Consider a fictional asset manager that receives daily prices from an external vendor.
+
+The prices are loaded automatically into the portfolio-accounting system at 6:00 p.m. The fund's NAV is calculated at 7:00 p.m.
+
+Suppose the pricing file is modified unexpectedly at 6:30 p.m.
+
+The cyber question is whether the file was altered without authorization.
+
+The finance question is whether the altered file affected valuation.
+
+The operational-risk questions are:
+
+\begin{itemize}
+    \item Was the file validated against an independent source?
+    \item Did the system detect the integrity change?
+    \item Was the NAV calculated using the modified file?
+    \item Can the institution identify affected portfolios?
+    \item Is there a manual fallback?
+    \item Does the firm need to correct client reporting?
+\end{itemize}
+
+This is a clear example of cyber risk becoming valuation risk.
+
+\section{Financial Practice: The Exchange Problem}
+
+An exchange is a particularly sensitive environment because availability and integrity have market-wide consequences.
+
+If the matching engine becomes unavailable, participants may lose the ability to execute trades. If market data are delayed or incorrect, price discovery may deteriorate. If participant access controls fail, unauthorized orders may be submitted.
+
+An exchange therefore requires extremely strong resilience, monitoring, segmentation, recovery procedures, and governance.
+
+From a financial-markets perspective, the cyber-risk question extends beyond the exchange's own profits. It includes market quality, liquidity, participant confidence, and potentially systemic stability.
+
+\section{Indicators of Higher Cyber Exposure}
+
+Finance professionals should learn to recognize practical red flags.
+
+Higher exposure may exist when:
+
+\begin{itemize}
+    \item one account has unusually broad permissions;
+    \item critical systems depend on one vendor;
+    \item backups exist but have not been tested;
+    \item old systems remain connected because replacement is difficult;
+    \item systems are poorly documented;
+    \item security findings remain unresolved for long periods;
+    \item no one can explain which systems are business-critical;
+    \item manual workarounds have not been rehearsed;
+    \item important processes lack independent reconciliation;
+    \item executives receive technical reports without business impact analysis.
+\end{itemize}
+
+These are not proof of imminent failure. They are indicators that residual risk may be higher than management assumes.
+
+\section{The Role of Controls}
+
+Attackers attempt to create unauthorized outcomes. Controls attempt to interrupt that path.
+
+A practical control map can be organized as follows:
+
+\begin{equation}
+\text{Prevent}
+\rightarrow
+\text{Detect}
+\rightarrow
+\text{Contain}
+\rightarrow
+\text{Recover}
+\rightarrow
+\text{Learn}.
+\end{equation}
+
+Preventive controls include authentication, secure configuration, least privilege, segmentation, and approval rules.
+
+Detective controls include logs, alerts, reconciliation, anomaly detection, and integrity checks.
+
+Containment controls limit the spread or impact of an event.
+
+Recovery controls restore trusted operations.
+
+Learning controls ensure that the institution closes weaknesses and updates procedures after the event.
+
+For financial businesses, the best control architecture usually combines technical and financial controls. A payment system may rely on identity controls plus transaction limits. A trading system may rely on secure access plus pre-trade risk controls. An asset manager may rely on file integrity plus independent price validation.
+
+\section{Mini Case: The Fictional Broker-Dealer}
+
+A fictional broker-dealer operates an electronic trading platform for institutional clients.
+
+At 9:12 a.m., the security platform records repeated requests for restricted administrative pages from an external source.
+
+At 9:16 a.m., the same source attempts several failed logins.
+
+At 9:20 a.m., the source stops.
+
+No successful login is recorded. No order was submitted. No system was modified.
+
+What happened?
+
+The most reasonable interpretation is that the institution observed a reconnaissance-like pattern and unsuccessful authentication activity. The preventive controls appear to have worked.
+
+The event still matters. The firm should confirm that no access occurred, review whether the source interacted with any other services, verify that the targeted administrative pages are necessary, and determine whether additional controls are appropriate.
+
+From a finance perspective, no immediate financial loss exists. But the event provides information about exposure and control effectiveness.
+
+Now change one fact. Suppose a successful login occurs at 9:18 a.m.
+
+The analysis changes materially. The firm should determine which account authenticated, what permissions it had, what actions followed, whether any orders or configuration changes occurred, and whether client data were accessed.
+
+The difference between the two scenarios is not simply technical. It changes the potential loss distribution.
+
+\section{Safe Notebook Lab}
+
+\begin{notebooklab}
+The companion notebook for this chapter should generate only predetermined, synthetic events. It can simulate:
+
+\begin{enumerate}
+    \item requests for fictional restricted paths;
+    \item failed login events;
+    \item a successful synthetic login;
+    \item access to a fictional sensitive resource;
+    \item a defensive rule that groups the events into a timeline.
+\end{enumerate}
+
+The educational objective is to study what the defender sees and how the business significance changes as the scenario evolves.
+
+The notebook should not scan real systems, generate exploit payloads, attempt real authentication, or interact with external networks.
+\end{notebooklab}
+
+\section{A Pragmatic Framework for Finance Professionals}
+
+When confronted with a cyber event, a finance professional can use five questions:
+
+\begin{enumerate}
+    \item \textbf{What business capability is affected?}
+    \item \textbf{Which asset, identity, or data set is involved?}
+    \item \textbf{What unauthorized outcome could occur?}
+    \item \textbf{Which controls should prevent or detect that outcome?}
+    \item \textbf{What is the financial consequence if those controls fail?}
+\end{enumerate}
+
+This framework keeps the analysis focused on institutional risk rather than technical fascination.
+
+\section{Chapter Summary}
+
+The main lessons of this chapter are:
+
+\begin{enumerate}
+    \item Attackers should be understood in terms of business objectives rather than technical mythology.
+    \item The conceptual lifecycle of discover, enter, expand, act, and monetize helps finance professionals organize cyber-risk scenarios.
+    \item Confidentiality, integrity, and availability map directly to client data, valuation, trading, payments, and market infrastructure.
+    \item Identity compromise is especially important because legitimate permissions can convert a cyber weakness into a financial action.
+    \item Simple weaknesses such as excessive privilege, poor configuration, weak verification, and untested backups can create large losses.
+    \item Strong financial defenses combine technical controls with transaction controls, reconciliation, approvals, limits, and governance.
+    \item The correct question is always: what financial process can be affected if the unauthorized objective succeeds?
+\end{enumerate}
+
+\section{Review Questions}
+
+\begin{enumerate}
+    \item Why is it more useful for a finance professional to focus on attacker objectives than on technical attack methods?
+    \item What are the five conceptual stages of the simplified attacker lifecycle?
+    \item How can a confidentiality breach create a market-integrity problem?
+    \item Why is data integrity particularly important for asset managers?
+    \item Give two examples of how an availability event can create financial loss.
+    \item Why does compromising a privileged identity create greater risk than compromising a low-privilege identity?
+    \item How does segregation of duties reduce cyber-enabled fraud risk?
+    \item Why should third-party cyber risk be treated as operational risk?
+    \item In the broker-dealer case, how does the appearance of one successful login change the analysis?
+    \item What are the five questions in the pragmatic framework for finance professionals?
+\end{enumerate}

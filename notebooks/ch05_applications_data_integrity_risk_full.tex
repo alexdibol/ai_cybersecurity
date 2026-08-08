@@ -1,0 +1,799 @@
+\chapter{Applications, Data, and Integrity Risk in the Age of Agentic AI}
+
+\begin{learningobjectives}
+By the end of this chapter, the reader should be able to:
+\begin{itemize}
+    \item explain why applications and data integrity are financial controls rather than merely technology concerns;
+    \item distinguish confidentiality, integrity, availability, provenance, and authorization in data-driven financial processes;
+    \item understand how frontier AI models and autonomous agents expand the attack surface of financial institutions;
+    \item describe, at a safe and non-operational level, the principal AI-enabled attack strategies relevant to applications, data, and autonomous workflows;
+    \item explain prompt injection, context manipulation, memory poisoning, tool misuse, data poisoning, and agent-to-agent trust failures without learning offensive implementation techniques;
+    \item evaluate practical protections based on least privilege, separation of data and authority, deterministic controls, human approval, isolation, provenance, monitoring, and recovery;
+    \item connect AI-enabled cyber threats to valuation, trading, payments, risk management, compliance, and financial-market infrastructure.
+\end{itemize}
+\end{learningobjectives}
+
+\section{Applications Are Financial Decision Systems}
+
+A financial application is not simply software. It is a mechanism that transforms information into economically meaningful actions.
+
+A portfolio-accounting system receives positions and prices and produces valuations. A trading system receives orders and produces executions. A payment platform receives instructions and produces transfers of value. A risk engine receives exposures and market data and produces limits, capital measures, and management information. A regulatory-reporting platform transforms internal data into external representations of the institution.
+
+The simplest representation is:
+
+\begin{equation}
+\text{Inputs}
+\rightarrow
+\text{Application Logic}
+\rightarrow
+\text{Decision or Action}
+\rightarrow
+\text{Financial Consequence}.
+\end{equation}
+
+Cybersecurity becomes economically important whenever an unauthorized actor can alter any part of this chain.
+
+If the application logic is changed, the system may behave incorrectly.
+
+If the inputs are corrupted, a perfectly functioning application may produce a wrong result.
+
+If authorization is weak, the correct application may execute the wrong person's instruction.
+
+If the application becomes unavailable, a legitimate financial process may fail at the moment it is needed.
+
+The first practical lesson is therefore that application security and data integrity belong inside the financial control framework.
+
+\begin{intuition}
+A financial model can be mathematically correct and still produce a dangerous answer if its data, permissions, or operating environment are not trustworthy.
+\end{intuition}
+
+\section{Integrity Is Often More Important Than Secrecy}
+
+Cybersecurity is frequently discussed as protection against information theft. Confidentiality is important, but in many financial businesses integrity can be even more important.
+
+Consider a simple pricing file containing a bond price of 98.25.
+
+If an unauthorized process reads that price, there may or may not be a material confidentiality problem.
+
+If an unauthorized process changes the price to 108.25 and the altered value enters the valuation system, the consequences can be immediate.
+
+The portfolio may be overstated. Risk measures may be distorted. Performance may be misreported. A client may receive an incorrect NAV. Collateral calculations may be wrong. A trade may be executed on a false signal.
+
+For this reason, financial institutions should distinguish:
+
+\begin{itemize}
+    \item \textbf{Confidentiality}: who may see the data?
+    \item \textbf{Integrity}: can the institution trust the data?
+    \item \textbf{Availability}: can the institution access the data when required?
+    \item \textbf{Provenance}: where did the data come from?
+    \item \textbf{Authorization}: who may change or act upon the data?
+\end{itemize}
+
+The addition of provenance is increasingly important in the AI era. An autonomous system may process information from email, websites, documents, databases, market feeds, and other agents. The system must distinguish trusted instructions from untrusted content.
+
+\section{A Simple Integrity Control}
+
+A cryptographic hash provides a useful pedagogical example.
+
+Let the trusted content be \(x_0\). The institution calculates:
+
+\begin{equation}
+h_0 = H(x_0).
+\end{equation}
+
+Later it calculates:
+
+\begin{equation}
+h_1 = H(x_1).
+\end{equation}
+
+If:
+
+\begin{equation}
+h_0 \neq h_1,
+\end{equation}
+
+the content changed.
+
+The hash does not explain why.
+
+The change may have been authorized. It may be accidental. It may be malicious.
+
+This distinction is essential. Cyber controls often detect deviations, not intentions. Governance provides the context required to decide whether the deviation is acceptable.
+
+In financial practice, integrity controls can be complemented by reconciliation, independent data sources, approval workflows, digital signatures, version histories, and audit trails.
+
+\section{The Traditional Application Threat}
+
+Before considering AI, it is useful to understand the conventional application-risk model.
+
+An application receives inputs. Those inputs must be validated. The user must be authenticated. The requested action must be authorized. Sensitive information must be protected. Changes to the application must be controlled. Logs must preserve evidence.
+
+A weakness can therefore occur at several layers:
+
+\begin{equation}
+\text{Identity}
++
+\text{Input}
++
+\text{Logic}
++
+\text{Data}
++
+\text{Configuration}
++
+\text{Dependencies}.
+\end{equation}
+
+Historically, application-security programs tried to reduce weaknesses through secure development, testing, patching, access control, segmentation, change management, and monitoring.
+
+Those controls remain necessary.
+
+Artificial intelligence does not replace the traditional attack surface.
+
+It adds another one.
+
+\section{The AI Threat Lens: AI Changes Both Sides of the Application}
+
+AI creates two distinct cybersecurity problems.
+
+The first is:
+
+\begin{quote}
+AI makes attackers more capable.
+\end{quote}
+
+Frontier models can help analyze code, reason about complex systems, automate repetitive work, and sustain long sequences of technical analysis. Current frontier cybersecurity evaluations illustrate substantial progress. OpenAI reports that GPT-5.6 and GPT-5.6 Sol materially advance cybersecurity performance, while Anthropic has limited access to Mythos-class models because of their unusually strong capabilities in software-security tasks.
+
+The second problem is different:
+
+\begin{quote}
+AI applications can themselves be manipulated.
+\end{quote}
+
+A conventional application normally distinguishes code from data relatively clearly. An AI agent may consume natural-language content and treat some of that content as information and some as instructions.
+
+This creates a new security boundary.
+
+An autonomous financial agent may read:
+
+\begin{itemize}
+    \item email;
+    \item research reports;
+    \item financial statements;
+    \item websites;
+    \item internal documents;
+    \item spreadsheets;
+    \item database records;
+    \item messages from other agents.
+\end{itemize}
+
+Some of those sources are trustworthy.
+
+Some are not.
+
+If the agent cannot reliably distinguish information from instructions, external content may influence its behavior.
+
+This is one of the central security problems of agentic AI.
+
+\section{Prompt Injection: Social Engineering for Machines}
+
+OpenAI describes prompt injection as a form of social engineering directed at conversational AI systems. Anthropic similarly identifies prompt injection as a major security challenge for browser-based and tool-using agents.
+
+The concept can be explained safely.
+
+Suppose a financial research agent has the following legitimate objective:
+
+\begin{quote}
+Read public financial information and summarize risks for the portfolio manager.
+\end{quote}
+
+While reading an external document, the agent encounters text that attempts to persuade it to disregard its intended task and take some unrelated action.
+
+A secure architecture should treat that external text as \textbf{data}, not as an authorized instruction.
+
+The risk becomes much greater when the agent has tools.
+
+A chatbot manipulated by external text may produce a bad answer.
+
+A tool-using agent may take a bad action.
+
+This difference can be summarized as:
+
+\begin{equation}
+\text{Manipulated Model}
++
+\text{No Authority}
+\rightarrow
+\text{Bad Output},
+\end{equation}
+
+while:
+
+\begin{equation}
+\text{Manipulated Agent}
++
+\text{Operational Authority}
+\rightarrow
+\text{Potential Real-World Loss}.
+\end{equation}
+
+For financial institutions, this is a critical distinction.
+
+\section{Typical AI-Enabled Attack Strategies}
+
+The purpose of this section is threat recognition, not offensive instruction. The strategies are described only at the architectural level required for risk management.
+
+\subsection{1. Prompt and Context Manipulation}
+
+The attacker attempts to influence the instructions or context processed by an AI system.
+
+The content may arrive through a document, message, website, database record, or another tool.
+
+The strategic objective is to cause the agent to prioritize an unauthorized instruction over its legitimate objective.
+
+The financial risk depends entirely on authority.
+
+A research-only agent may generate a misleading report.
+
+A payment agent may create an unauthorized workflow.
+
+A trading agent may generate or submit an inappropriate order.
+
+The protective principle is to prevent untrusted content from automatically creating trusted authority.
+
+\subsection{2. Indirect Prompt Injection}
+
+Indirect prompt injection occurs when adversarial instructions are embedded in content that the agent retrieves while performing another task.
+
+This is especially important for agents that browse external information, review email, process uploaded files, or read third-party data.
+
+A portfolio-research agent is exposed because it necessarily consumes external material.
+
+A customer-service agent is exposed because it reads customer messages.
+
+A treasury agent may be exposed if it processes free-form instructions from external counterparties.
+
+The defensive implication is that data ingestion and instruction execution must be separated.
+
+\subsection{3. Memory Poisoning}
+
+Agentic systems often maintain memory.
+
+Memory may contain previous decisions, user preferences, task summaries, learned facts, or workflow state.
+
+If inaccurate or adversarial information becomes persistent memory, future decisions may be influenced long after the original interaction disappears.
+
+For a financial institution, persistent memory can create a subtle integrity problem.
+
+Suppose an agent incorrectly records that a beneficiary is trusted, a limit was approved, or a vendor is authoritative. The risk may persist across many future workflows.
+
+Memory should therefore be treated as a controlled data store, not as an informal notebook.
+
+\subsection{4. Tool Misuse}
+
+The model itself may not possess direct access to a financial system. Tools provide that access.
+
+Typical tools may include:
+
+\begin{itemize}
+    \item document retrieval;
+    \item database queries;
+    \item email;
+    \item code execution;
+    \item cloud administration;
+    \item payment APIs;
+    \item trading interfaces;
+    \item file modification;
+    \item ticketing and workflow systems.
+\end{itemize}
+
+The risk emerges when a model can combine tools in an unintended sequence.
+
+The central control principle is:
+
+\begin{equation}
+\text{Tool Availability}
+\neq
+\text{Tool Authority}.
+\end{equation}
+
+An agent may need to query a payment database without needing authority to release a payment.
+
+An agent may need to read code without authority to deploy it.
+
+\subsection{5. Agent-to-Agent Trust Manipulation}
+
+Multi-agent architectures create another risk.
+
+One agent may accept information or recommendations from another agent.
+
+If the receiving agent assumes that every message from another agent is trustworthy, compromised information can propagate through the system.
+
+For example:
+
+\begin{equation}
+\text{Research Agent}
+\rightarrow
+\text{Risk Agent}
+\rightarrow
+\text{Trading Agent}.
+\end{equation}
+
+A false assertion introduced at the research layer may eventually influence a trading decision.
+
+Agent communications therefore require provenance and authorization.
+
+The fact that a message came from ``another AI agent'' does not make it authoritative.
+
+\subsection{6. Data Poisoning}
+
+AI systems depend heavily on data.
+
+An attacker may attempt to influence the information used for training, retrieval, memory, or real-time decision support.
+
+For finance, the relevant risk is not only model accuracy. It is financial decision integrity.
+
+A corrupted reference-data source, manipulated news feed, or poisoned knowledge base may change the agent's conclusions.
+
+Traditional reconciliation becomes newly important.
+
+\subsection{7. AI-Assisted Vulnerability Discovery}
+
+Frontier cybersecurity models increasingly assist in finding software weaknesses.
+
+This capability has substantial defensive value. OpenAI states that its current testing suggests GPT-5.6 is presently better at finding and fixing vulnerabilities than at exploiting them in real attacks. Anthropic's Project Glasswing similarly uses Mythos-class capabilities to discover and remediate weaknesses in critical software.
+
+But the same capability changes the threat environment.
+
+The cost of analyzing large software estates can fall.
+
+The time between vulnerability discovery and attempted misuse may shrink.
+
+Financial institutions must therefore shorten the defensive cycle:
+
+\begin{equation}
+\text{Discover}
+\rightarrow
+\text{Prioritize}
+\rightarrow
+\text{Patch}
+\rightarrow
+\text{Verify}.
+\end{equation}
+
+\subsection{8. Autonomous Parallelization}
+
+A human security analyst has limited attention.
+
+An agentic system can potentially run many analytical tasks in parallel.
+
+A coordinated architecture might include:
+
+\begin{equation}
+\text{Coordinator}
++
+\text{Code Analyst}
++
+\text{Identity Analyst}
++
+\text{Data Analyst}
++
+\text{Verifier}.
+\end{equation}
+
+The key threat is not mysterious intelligence. It is economic scalability.
+
+Activities that once required many hours of expert human labor can increasingly be automated or distributed among agents.
+
+\section{Typical Agentic Threat Architectures}
+
+Several architecture patterns deserve recognition.
+
+\subsection{Single Agent with Tools}
+
+One model operates in a loop:
+
+\begin{equation}
+\text{Observe}
+\rightarrow
+\text{Reason}
+\rightarrow
+\text{Act}
+\rightarrow
+\text{Observe}.
+\end{equation}
+
+Risk increases with tool permissions and execution time.
+
+\subsection{Planner--Executor--Verifier}
+
+One agent develops a plan, another performs constrained tasks, and a third checks the result.
+
+This architecture increases persistence and reliability.
+
+\subsection{Supervisor and Specialist Agents}
+
+A supervisory model assigns work to many specialized agents.
+
+This architecture increases parallelism.
+
+\subsection{Memory-Augmented Architecture}
+
+Agents maintain persistent state across tasks.
+
+This increases continuity but creates memory-integrity risk.
+
+\subsection{Human-in-the-Loop Architecture}
+
+Agents prepare actions but humans approve high-impact decisions.
+
+For financial institutions, this will often be the preferable architecture for material actions.
+
+\section{Protection Strategy 1: Separate Information from Authority}
+
+The most important AI control is architectural.
+
+Untrusted information should not automatically grant authority.
+
+A research agent may read the open internet, but it should not therefore have permission to execute payments.
+
+A customer-support agent may read customer messages, but a message should not be able to redefine the agent's system permissions.
+
+A useful principle is:
+
+\begin{equation}
+\text{Untrusted Content}
+\rightarrow
+\text{Interpretation},
+\end{equation}
+
+but not:
+
+\begin{equation}
+\text{Untrusted Content}
+\rightarrow
+\text{Automatic High-Impact Action}.
+\end{equation}
+
+OpenAI's current guidance on prompt-injection-resistant agents emphasizes constraining the consequences of manipulation rather than assuming every malicious input can be perfectly detected. This is particularly relevant to finance.
+
+\section{Protection Strategy 2: Least Privilege for Tools}
+
+Every agent should receive the minimum tools required for the task.
+
+If an agent only needs to read a portfolio, give it read access.
+
+If it needs to prepare a payment, do not automatically give it release authority.
+
+If it needs to analyze code, do not give it production deployment access.
+
+This is ordinary least privilege applied to autonomous systems.
+
+\section{Protection Strategy 3: Deterministic Gates}
+
+Some controls should remain outside the model.
+
+A language model should not decide whether a payment exceeds an authorized limit.
+
+The system can encode:
+
+\begin{equation}
+\text{If Amount} > L,
+\quad
+\text{Require Independent Approval}.
+\end{equation}
+
+Similarly, trading limits, beneficiary restrictions, position limits, data-export constraints, and production deployment rules can be deterministic.
+
+AI may provide analysis.
+
+The control layer should enforce policy.
+
+\section{Protection Strategy 4: Human Approval for Material Actions}
+
+Human approval is not useful if it is merely ceremonial.
+
+The approver should see:
+
+\begin{itemize}
+    \item what the agent proposes;
+    \item why it proposes it;
+    \item which data it used;
+    \item which tools will be invoked;
+    \item the economic consequence;
+    \item any policy exceptions.
+\end{itemize}
+
+The human must be able to reject the action.
+
+For very high-risk processes, a second independent approver may still be necessary.
+
+\section{Protection Strategy 5: Isolation and Sandboxing}
+
+AI-generated or AI-modified code should not automatically operate in critical production environments.
+
+Testing environments, constrained execution, permission boundaries, and network restrictions reduce the impact of error or manipulation.
+
+The same principle applies to financial models.
+
+An experimental agent should not share unrestricted access with the production payment environment merely because both systems belong to the same institution.
+
+\section{Protection Strategy 6: Provenance and Trusted Data}
+
+Financial institutions should identify which data sources are authoritative.
+
+A valuation agent should know which pricing feed is approved.
+
+A treasury agent should know which cash-balance source is authoritative.
+
+A compliance agent should distinguish formal policy from unverified commentary.
+
+Where possible, institutions should preserve:
+
+\begin{equation}
+\text{Data}
++
+\text{Source}
++
+\text{Time}
++
+\text{Version}
++
+\text{Authorization}.
+\end{equation}
+
+This creates traceability.
+
+\section{Protection Strategy 7: Independent Reconciliation}
+
+AI increases the value of an old financial control: reconciliation.
+
+If an agent calculates a portfolio value, compare key results with an independent source.
+
+If an agent prepares a transfer, reconcile the destination and amount against approved instructions.
+
+If an agent changes a risk parameter, compare the new value with approved governance records.
+
+Independent verification reduces dependence on one cognitive system.
+
+\section{Protection Strategy 8: Immutable and External Logging}
+
+An autonomous agent should not be the sole custodian of its own audit trail.
+
+Logs should be recorded outside the agent's control.
+
+The institution should preserve:
+
+\begin{itemize}
+    \item agent identity;
+    \item human owner;
+    \item model version;
+    \item input sources;
+    \item tool calls;
+    \item proposed actions;
+    \item approvals;
+    \item executed actions;
+    \item exceptions.
+\end{itemize}
+
+This is essential for investigation, model-risk management, and accountability.
+
+\section{Protection Strategy 9: Limit Time, Money, and Scope}
+
+Autonomy should have boundaries.
+
+An agent can be constrained by:
+
+\begin{itemize}
+    \item maximum transaction amount;
+    \item maximum aggregate daily amount;
+    \item approved counterparties;
+    \item approved instruments;
+    \item approved systems;
+    \item operating hours;
+    \item maximum execution duration;
+    \item maximum number of actions;
+    \item maximum data-access scope.
+\end{itemize}
+
+These are the autonomous-system equivalent of trading and credit limits.
+
+\section{Protection Strategy 10: Design for Recovery}
+
+No control is perfect.
+
+A financial institution should assume that an agent may eventually make an incorrect or unauthorized action.
+
+The architecture should support:
+
+\begin{equation}
+\text{Detect}
+\rightarrow
+\text{Stop}
+\rightarrow
+\text{Isolate}
+\rightarrow
+\text{Reconstruct}
+\rightarrow
+\text{Restore}.
+\end{equation}
+
+Kill switches, credential revocation, version rollback, trusted backups, transaction reconciliation, and independent logs are therefore essential.
+
+\section{Financial Practice: The Valuation Agent}
+
+Consider a fictional asset manager with an AI valuation assistant.
+
+The agent reads approved pricing feeds, issuer documents, portfolio positions, and market commentary. It identifies unusual price movements and proposes overrides for human review.
+
+This is a relatively controlled architecture.
+
+Now suppose the firm allows the agent to retrieve arbitrary external websites and automatically write approved prices into the production valuation system.
+
+The risk changes substantially.
+
+Untrusted external content is now connected to a production financial action.
+
+A safer architecture is:
+
+\begin{equation}
+\text{External Research}
+\rightarrow
+\text{Agent Analysis}
+\rightarrow
+\text{Proposed Override}
+\rightarrow
+\text{Independent Validation}
+\rightarrow
+\text{Production Update}.
+\end{equation}
+
+The key protection is not that the model is guaranteed to resist manipulation.
+
+The protection is that manipulation does not automatically become a financial record.
+
+\section{Financial Practice: The Trading Agent}
+
+Suppose an investment manager deploys an agent that reads research and proposes trades.
+
+Initially, the system is advisory.
+
+Later it is connected to the order-management system.
+
+The firm should preserve deterministic controls around:
+
+\begin{itemize}
+    \item instrument eligibility;
+    \item position limits;
+    \item concentration;
+    \item liquidity;
+    \item restricted lists;
+    \item trading hours;
+    \item maximum order size.
+\end{itemize}
+
+The agent can propose.
+
+The risk engine should constrain.
+
+The execution system should enforce.
+
+\begin{risklens}
+In financial AI, the correct architecture separates intelligence from authority. The more capable the model becomes, the more important it is that economic authority remain independently governed.
+\end{risklens}
+
+\section{Mini Case: The Research Document}
+
+A fictional hedge fund operates a research agent.
+
+The agent reads public documents and prepares summaries for portfolio managers.
+
+One day it reads an external document containing misleading instructions designed to influence an automated reader.
+
+In Architecture A, the agent can only generate a research note.
+
+The maximum direct operational consequence is a misleading recommendation that must still be reviewed by a human.
+
+In Architecture B, the same agent can generate and submit orders.
+
+The identical manipulation now has a different loss distribution.
+
+In Architecture C, the agent can submit orders, change risk limits, and write to portfolio memory.
+
+The risk becomes much greater again.
+
+Nothing about the external document changed.
+
+The architecture changed.
+
+This yields one of the most important principles in the book:
+
+\begin{equation}
+\text{Cyber Consequence}
+=
+f(\text{Manipulation},\text{Authority},\text{Controls}).
+\end{equation}
+
+\section{Safe Notebook Lab}
+
+\begin{notebooklab}
+The companion notebook should simulate an AI-enabled financial workflow entirely with synthetic data.
+
+Students can create:
+\begin{enumerate}
+    \item a fictional portfolio;
+    \item an approved pricing source;
+    \item an untrusted research document;
+    \item a simple research ``agent'' represented by transparent Python logic;
+    \item a proposed price override;
+    \item a deterministic control that prevents automatic production changes;
+    \item an independent reconciliation step;
+    \item an audit log.
+\end{enumerate}
+
+A second exercise can compare three agent architectures:
+\begin{enumerate}
+    \item read-only research;
+    \item research plus recommendation;
+    \item research plus autonomous action.
+\end{enumerate}
+
+Students should estimate how the potential loss changes as authority increases.
+
+The notebook must not browse real targets, exploit applications, use real credentials, access external financial accounts, or generate operational attack payloads.
+\end{notebooklab}
+
+\section{A Pragmatic Protection Checklist}
+
+For every AI-enabled financial application, management should ask:
+
+\begin{enumerate}
+    \item What information can the agent read?
+    \item Which information sources are untrusted?
+    \item Can external content influence the agent's instructions?
+    \item What persistent memory does the agent maintain?
+    \item Which tools can the agent call?
+    \item Which actions have financial consequences?
+    \item Which controls exist outside the model?
+    \item Which actions require independent human approval?
+    \item Are critical data independently reconciled?
+    \item Are agent actions logged outside the agent's control?
+    \item Are monetary, temporal, and operational limits defined?
+    \item Can the institution immediately stop and revoke the agent?
+    \item Can the institution restore trusted data and reconstruct what happened?
+\end{enumerate}
+
+\section{Chapter Summary}
+
+The main lessons of this chapter are:
+
+\begin{enumerate}
+    \item Financial applications convert information into economic outcomes, so application security is part of financial control.
+    \item Data integrity can be more consequential than confidentiality when financial decisions depend on accurate prices, positions, limits, or instructions.
+    \item Frontier models increase the speed and scale of software-security analysis, changing both defensive capabilities and the threat environment.
+    \item Agentic AI creates a second problem because AI systems themselves can be manipulated through the information they consume.
+    \item Prompt injection is best understood as social engineering for AI systems; indirect prompt injection arises through external content processed by agents.
+    \item Other important AI-era threats include memory poisoning, tool misuse, agent-to-agent trust failures, data poisoning, automated vulnerability discovery, and autonomous parallelization.
+    \item Typical threat architectures include single tool-using agents, planner--executor systems, supervisor-specialist teams, and memory-augmented agents.
+    \item The strongest protection is architectural: separate untrusted information from economic authority.
+    \item Least privilege, deterministic gates, human approval, sandboxing, provenance, reconciliation, external logging, and strict limits reduce the consequence of AI manipulation.
+    \item Financial institutions should assume that sufficiently capable agents will sometimes make mistakes or be manipulated and must therefore design for containment and recovery.
+\end{enumerate}
+
+\section{Review Questions}
+
+\begin{enumerate}
+    \item Why can data integrity be more important than confidentiality in a valuation process?
+    \item What is the difference between a manipulated chatbot and a manipulated tool-using agent?
+    \item Explain prompt injection in non-technical terms.
+    \item Why is indirect prompt injection particularly relevant to research and email agents?
+    \item How can persistent agent memory become an integrity risk?
+    \item Why should tool availability be separated from tool authority?
+    \item What risk arises when one AI agent automatically trusts another?
+    \item How does autonomous parallelization change the economics of cyber threats?
+    \item Why should some financial controls remain deterministic rather than model-based?
+    \item How does independent reconciliation protect against both conventional data corruption and AI error?
+    \item In the valuation-agent example, why should external research not automatically update production prices?
+    \item What are the minimum controls you would require before allowing any AI agent to take an economically material action?
+\end{enumerate}

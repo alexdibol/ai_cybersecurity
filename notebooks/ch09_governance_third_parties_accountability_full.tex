@@ -1,0 +1,931 @@
+\chapter{Governance, Third Parties, and Institutional Accountability in the Age of Agentic AI}
+
+\begin{learningobjectives}
+By the end of this chapter, the reader should be able to:
+\begin{itemize}
+    \item explain why cybersecurity and AI risk are institutional governance issues rather than technology-department issues;
+    \item describe board, senior-management, business, risk, compliance, audit, and technology responsibilities;
+    \item understand how third-party providers, cloud services, model vendors, software dependencies, and autonomous agents create concentration and contagion risk;
+    \item identify the principal governance challenges created by frontier AI models, tool-using agents, multi-agent teams, persistent memory, and autonomous workflows;
+    \item describe, at a safe and non-operational level, how AI-enabled threat actors may exploit institutional dependencies, delegated authority, vendors, and trust relationships;
+    \item evaluate practical defenses based on ownership, segregation of duties, agent identity, permission boundaries, vendor due diligence, evidence, testing, kill switches, and resilience;
+    \item connect AI and cyber governance directly to financial stability, fiduciary responsibility, operational resilience, valuation, payments, trading, and market infrastructure.
+\end{itemize}
+\end{learningobjectives}
+
+\section{Cybersecurity Is Not an IT Problem}
+
+One of the most persistent governance errors is to classify cybersecurity as an information-technology problem.
+
+Technology teams are essential to cybersecurity, but the institution owns the risk.
+
+A cyber event can affect:
+
+\begin{itemize}
+    \item payments;
+    \item trading;
+    \item client assets;
+    \item valuation;
+    \item liquidity;
+    \item regulatory reporting;
+    \item legal obligations;
+    \item business continuity;
+    \item reputation;
+    \item strategic transactions.
+\end{itemize}
+
+These are not technology outcomes. They are institutional outcomes.
+
+The same principle applies even more strongly to artificial intelligence.
+
+An autonomous treasury agent is not merely an AI system.
+
+It may be part of the treasury operating model.
+
+An AI trading agent is not merely software.
+
+It may influence or execute investment decisions.
+
+An autonomous compliance system may determine which transactions receive additional review.
+
+Therefore:
+
+\begin{equation}
+\text{Technology Ownership}
+\neq
+\text{Risk Ownership}.
+\end{equation}
+
+Technology may operate the platform.
+
+The business owns the financial consequence.
+
+\section{Governance Begins with Accountability}
+
+A well-governed institution should be able to answer five questions for every critical cyber or AI system:
+
+\begin{enumerate}
+    \item Who owns the business process?
+    \item Who owns the technology?
+    \item Who owns the risk?
+    \item Who approves material changes?
+    \item Who is accountable when the system fails?
+\end{enumerate}
+
+If the answers are unclear, the institution has a governance vulnerability.
+
+This matters because complex systems create diffusion of responsibility.
+
+A business unit may say that technology selected the model.
+
+Technology may say that the vendor designed the model.
+
+The vendor may say that the institution configured the tools.
+
+Risk may say that management accepted the residual exposure.
+
+When something goes wrong, accountability becomes ambiguous.
+
+Good governance eliminates that ambiguity before the incident.
+
+\section{The Three Lines}
+
+A familiar governance framework is the three-lines model.
+
+\subsection{First Line: Business and Operations}
+
+The first line owns the activity.
+
+A treasury function owns treasury decisions.
+
+A trading function owns trading decisions.
+
+An asset-management operation owns valuation and portfolio processes.
+
+If an AI agent becomes part of those activities, the business remains responsible.
+
+The agent does not become the risk owner.
+
+\subsection{Second Line: Risk and Compliance}
+
+The second line establishes risk frameworks, challenges assumptions, sets standards, monitors limits, and provides independent oversight.
+
+For agentic AI, the second line may ask:
+
+\begin{itemize}
+    \item What authority does the agent have?
+    \item Which data can it access?
+    \item Which controls exist outside the model?
+    \item What happens when the model behaves unpredictably?
+    \item How is third-party dependence governed?
+\end{itemize}
+
+\subsection{Third Line: Internal Audit}
+
+Internal audit provides independent assurance.
+
+Audit should not attempt to replicate every technical cybersecurity test.
+
+Its role is to determine whether the governance framework operates as intended.
+
+For AI systems, audit may examine ownership, approval, evidence, permissions, monitoring, model changes, incident processes, and vendor controls.
+
+\section{Board Responsibility}
+
+The board should not configure firewalls or evaluate source code.
+
+It should understand material exposure.
+
+A board should ask:
+
+\begin{itemize}
+    \item Which digital services are critical?
+    \item Which AI systems can create financial actions?
+    \item How concentrated are critical vendors?
+    \item Which systems could create systemic or client harm?
+    \item What is the institution's cyber and AI risk appetite?
+    \item What incidents would require immediate escalation?
+    \item Are recovery procedures tested?
+    \item Can autonomous systems be stopped?
+\end{itemize}
+
+The board's role is challenge, oversight, and accountability.
+
+A useful principle is:
+
+\begin{equation}
+\text{Board Oversight}
+=
+\text{Material Risk}
++
+\text{Decision Rights}
++
+\text{Evidence}
++
+\text{Challenge}.
+\end{equation}
+
+\section{Risk Appetite}
+
+Cybersecurity discussions often use language such as ``zero tolerance.''
+
+That phrase is rarely practical.
+
+Financial institutions cannot operate with zero cyber exposure.
+
+Every online service, employee account, vendor connection, and digital workflow creates some risk.
+
+The purpose of risk appetite is to define which exposures are acceptable and which are not.
+
+For example:
+
+\begin{itemize}
+    \item no autonomous agent may release payments above a threshold;
+    \item no single AI identity may modify both a trading limit and a trade;
+    \item critical production systems must have tested recovery;
+    \item high-severity vulnerabilities must be remediated within defined periods;
+    \item critical vendors must support independent contingency arrangements.
+\end{itemize}
+
+Risk appetite should be expressed through enforceable rules.
+
+\section{The AI Threat Lens: Governance Is Becoming a Cyber Control}
+
+As frontier AI capability increases, governance becomes part of the technical defense.
+
+OpenAI's August 2026 deployment-safety update treats the latest GPT-5.6 Sol and Luna releases as High capability in cybersecurity under its Preparedness Framework.\footnote{\url{https://deploymentsafety.openai.com/gpt-5-6-august-update}}
+
+OpenAI's broader GPT-5.6 system documentation similarly describes substantial cyber capability and extensive safeguards.\footnote{\url{https://deploymentsafety.openai.com/gpt-5-6}}
+
+Anthropic's Project Glasswing provides another indication of the frontier. Anthropic reports that partners using Claude Mythos Preview have identified large numbers of serious vulnerabilities across major software environments.\footnote{\url{https://www.anthropic.com/news/expanding-project-glasswing}}
+
+The UK AI Security Institute reports that the length of cyber tasks frontier models can autonomously complete has been increasing rapidly, with recent systems exceeding previous capability trends.\footnote{\url{https://www.aisi.gov.uk/blog/how-fast-is-autonomous-ai-cyber-capability-advancing}}
+
+The implication for financial governance is profound.
+
+The institution can no longer ask only:
+
+\begin{quote}
+Which AI model are we using?
+\end{quote}
+
+It must ask:
+
+\begin{quote}
+Which system is the model embedded in, which tools does it control, which data does it consume, which agents does it coordinate, and what authority can the overall architecture exercise?
+\end{quote}
+
+\section{The System Is the Unit of Risk}
+
+A frontier model without tools may create limited direct operational exposure.
+
+A moderately capable model with broad permissions may create far more risk.
+
+Therefore:
+
+\begin{equation}
+R_{\text{agentic system}}
+=
+f(
+M,
+T,
+A,
+D,
+P,
+S,
+G
+),
+\end{equation}
+
+where:
+
+\begin{itemize}
+    \item \(M\) is model capability;
+    \item \(T\) is tool access;
+    \item \(A\) is autonomy;
+    \item \(D\) is data access;
+    \item \(P\) is permissions;
+    \item \(S\) is system coordination;
+    \item \(G\) is governance effectiveness.
+\end{itemize}
+
+The last variable matters enormously.
+
+Governance can reduce the consequences of high capability.
+
+\section{Typical AI-Enabled Governance Attack Surfaces}
+
+Threat actors increasingly benefit from the same institutional complexity that creates operational efficiency.
+
+The following strategies are described only at a defensive and conceptual level.
+
+\subsection{1. Trust-Relationship Exploitation}
+
+Financial institutions trust vendors, counterparties, software providers, employees, APIs, and service accounts.
+
+An attacker may seek to exploit those trust relationships rather than directly attack the final system.
+
+The strategic lesson is:
+
+\begin{equation}
+\text{Trusted Connection}
+\neq
+\text{Risk-Free Connection}.
+\end{equation}
+
+\subsection{2. Third-Party Dependency Analysis}
+
+AI can process large amounts of public and technical information to identify organizational dependencies.
+
+The strategic effect is improved understanding of where one supplier or service supports many institutions.
+
+For defenders, the implication is concentration-risk analysis.
+
+\subsection{3. AI-Assisted Social Engineering of Vendors}
+
+A vendor relationship often involves regular communication.
+
+AI can make fraudulent communications more personalized, fluent, and context-aware.
+
+The relevant protection is independent verification of high-impact instructions.
+
+\subsection{4. Automated Supply-Chain Analysis}
+
+AI can assist with reviewing software dependencies and identifying weak components.
+
+This is highly valuable defensively.
+
+It also means that weak links in software supply chains may be identified faster by adversaries.
+
+Institutions need accurate software inventories and dependency governance.
+
+\subsection{5. Compromised Agent Trust}
+
+One internal agent may rely on another.
+
+A malicious or corrupted message can propagate if agents automatically trust each other.
+
+This creates a new form of institutional contagion:
+
+\begin{equation}
+A_1
+\rightarrow
+A_2
+\rightarrow
+A_3
+\rightarrow
+\text{Financial Action}.
+\end{equation}
+
+Agent-to-agent communication therefore needs identity, provenance, and authorization.
+
+\subsection{6. Delegated Authority Abuse}
+
+A threat actor may not need direct authority if it can manipulate an agent that possesses authority.
+
+The threat therefore becomes indirect:
+
+\begin{equation}
+\text{Adversary}
+\rightarrow
+\text{Manipulated Agent}
+\rightarrow
+\text{Authorized Tool}
+\rightarrow
+\text{Financial Action}.
+\end{equation}
+
+This is one of the most important governance risks of autonomous systems.
+
+\section{Third-Party Risk}
+
+Financial institutions depend heavily on external providers.
+
+Examples include:
+
+\begin{itemize}
+    \item cloud infrastructure;
+    \item market data;
+    \item pricing services;
+    \item payment networks;
+    \item custody;
+    \item communication platforms;
+    \item identity providers;
+    \item cybersecurity vendors;
+    \item software libraries;
+    \item AI model providers.
+\end{itemize}
+
+Third-party dependence creates efficiency.
+
+It also creates concentration.
+
+A failure at one provider may affect many institutions simultaneously.
+
+\section{AI Model Providers as Critical Vendors}
+
+Model providers introduce a new type of dependency.
+
+The institution may depend on:
+
+\begin{itemize}
+    \item model availability;
+    \item model behavior;
+    \item API access;
+    \item pricing;
+    \item safety controls;
+    \item data-handling policies;
+    \item model updates;
+    \item regional availability.
+\end{itemize}
+
+A model update can change behavior without the financial institution changing its own code.
+
+This creates model-version risk.
+
+A robust institution should therefore document which models power critical workflows and test significant upgrades before production use.
+
+\section{Cloud and Model Concentration}
+
+Consider a financial institution that uses one cloud provider and one AI model provider for multiple critical functions.
+
+The architecture may be efficient.
+
+But failure of either dependency can affect many business processes simultaneously.
+
+A concentration metric can be conceptualized as:
+
+\begin{equation}
+C =
+\sum_{i=1}^{n} w_i^2,
+\end{equation}
+
+where \(w_i\) represents the share of critical services dependent on provider \(i\).
+
+The formula resembles concentration metrics used elsewhere in finance.
+
+The point is intuitive: dependence concentrated in one provider creates more common-mode risk.
+
+\section{Vendor Due Diligence}
+
+Vendor due diligence should go beyond questionnaires.
+
+For critical providers, management should understand:
+
+\begin{itemize}
+    \item which services are provided;
+    \item which data are accessible;
+    \item subcontractor dependencies;
+    \item geographic concentration;
+    \item recovery capabilities;
+    \item security controls;
+    \item incident notification;
+    \item model and software change policies;
+    \item audit rights;
+    \item termination arrangements.
+\end{itemize}
+
+For AI vendors, additional questions include:
+
+\begin{itemize}
+    \item Which model versions are used?
+    \item Can the provider change the model automatically?
+    \item How are prompts and outputs handled?
+    \item Is customer data used for training?
+    \item Which tools can the provider-side agent access?
+    \item What evidence is available after an incident?
+\end{itemize}
+
+\section{The Software Supply Chain}
+
+Modern financial software depends on many components.
+
+A trading application may incorporate operating-system libraries, open-source packages, commercial software, APIs, cloud services, and internal code.
+
+The institution may therefore inherit vulnerabilities from components it did not create.
+
+AI-assisted vulnerability discovery makes supply-chain governance more urgent because weaknesses can be found faster and at greater scale.
+
+The institution should maintain:
+
+\begin{equation}
+\text{Application}
+\rightarrow
+\text{Dependencies}
+\rightarrow
+\text{Versions}
+\rightarrow
+\text{Owners}
+\rightarrow
+\text{Risk}.
+\end{equation}
+
+An undocumented dependency is a governance failure.
+
+\section{Agent Supply Chains}
+
+Autonomous systems create a new dependency chain.
+
+An agent may rely on:
+
+\begin{itemize}
+    \item a frontier model;
+    \item an embedding model;
+    \item a vector database;
+    \item a search service;
+    \item an orchestration framework;
+    \item a tool gateway;
+    \item cloud infrastructure;
+    \item external data sources.
+\end{itemize}
+
+A weakness in any component may affect the behavior of the full system.
+
+The agent should therefore be governed as an ecosystem rather than one model.
+
+\section{Policies, Standards, Procedures, and Controls}
+
+Good governance needs a hierarchy.
+
+\textbf{Policy} states what the institution requires.
+
+\textbf{Standard} defines mandatory minimum conditions.
+
+\textbf{Procedure} describes how the requirement is performed.
+
+\textbf{Control} prevents, detects, or corrects failure.
+
+\textbf{Evidence} demonstrates that the control operated.
+
+This can be written as:
+
+\begin{equation}
+\text{Policy}
+\rightarrow
+\text{Standard}
+\rightarrow
+\text{Procedure}
+\rightarrow
+\text{Control}
+\rightarrow
+\text{Evidence}.
+\end{equation}
+
+AI governance should follow the same structure.
+
+A policy saying ``AI must be safe'' is insufficient.
+
+A useful standard might say:
+
+\begin{quote}
+Any AI agent with financial execution authority must have a unique identity, externally logged actions, predetermined economic limits, and an independent kill mechanism.
+\end{quote}
+
+That statement can be tested.
+
+\section{Agent Governance}
+
+Every material agent should have an institutional record.
+
+At minimum:
+
+\begin{itemize}
+    \item agent name;
+    \item business owner;
+    \item technical owner;
+    \item model provider;
+    \item model version;
+    \item purpose;
+    \item permitted data;
+    \item permitted tools;
+    \item maximum authority;
+    \item approval requirements;
+    \item monitoring;
+    \item fallback;
+    \item kill procedure.
+\end{itemize}
+
+This becomes the agent equivalent of a user-access inventory.
+
+\section{Segregation of Duties for Agent Teams}
+
+Multi-agent architectures create opportunities for deliberate separation.
+
+Instead of one agent controlling the entire process:
+
+\begin{equation}
+\text{Research Agent}
+\rightarrow
+\text{Recommendation Agent}
+\rightarrow
+\text{Risk Agent}
+\rightarrow
+\text{Execution Gateway}.
+\end{equation}
+
+The execution gateway can enforce deterministic policy.
+
+This architecture is safer than allowing the research agent to execute directly.
+
+However, separation is meaningful only if the agents do not share unrestricted permissions.
+
+\section{Governance of Agent Memory}
+
+Persistent memory deserves explicit governance.
+
+Memory may contain:
+
+\begin{itemize}
+    \item prior instructions;
+    \item user preferences;
+    \item transaction history;
+    \item learned relationships;
+    \item risk judgments;
+    \item workflow state.
+\end{itemize}
+
+If memory becomes inaccurate or manipulated, future actions may inherit the error.
+
+Therefore, institutions should define:
+
+\begin{itemize}
+    \item what may enter memory;
+    \item which sources are authoritative;
+    \item who may modify memory;
+    \item how long memory persists;
+    \item how memory is audited;
+    \item how trusted state is restored.
+\end{itemize}
+
+\section{Governance of Frontier Cyber Models}
+
+Highly capable cybersecurity models require stronger controls.
+
+The relevant governance dimensions include:
+
+\begin{itemize}
+    \item user access;
+    \item permitted tasks;
+    \item tool restrictions;
+    \item logging;
+    \item human oversight;
+    \item environment isolation;
+    \item disclosure procedures;
+    \item output handling.
+\end{itemize}
+
+Anthropic's Project Glasswing illustrates one defensive governance approach: access to Mythos Preview was initially limited to selected partners using the model to identify and remediate vulnerabilities in critical software.\footnote{\url{https://www.anthropic.com/glasswing}}
+
+OpenAI similarly describes stronger safeguards as cyber capabilities increase.\footnote{\url{https://openai.com/index/gpt-5-6/}}
+
+The finance lesson is straightforward:
+
+\begin{intuition}
+More capable cyber models should not automatically receive broader institutional authority. Higher capability should normally lead to stronger governance.
+\end{intuition}
+
+\section{Protection Strategy 1: Inventory Every Material Agent}
+
+An institution cannot govern what it cannot identify.
+
+The organization should maintain a complete inventory of AI systems and agents.
+
+Shadow AI is the AI equivalent of shadow IT.
+
+If employees create autonomous workflows without registration, risk teams may not know which agents hold credentials, which data they access, or which actions they can take.
+
+\section{Protection Strategy 2: Separate Vendor Access from Business Authority}
+
+A vendor may provide the intelligence layer.
+
+It should not automatically control the business authority layer.
+
+A model provider may generate a recommendation.
+
+The financial institution should independently control:
+
+\begin{itemize}
+    \item payment release;
+    \item trade execution;
+    \item production deployment;
+    \item permission changes;
+    \item sensitive data export.
+\end{itemize}
+
+This limits dependency.
+
+\section{Protection Strategy 3: Contract for Evidence}
+
+Incident response requires evidence.
+
+Critical vendor contracts should address:
+
+\begin{itemize}
+    \item logging;
+    \item incident notification;
+    \item data retention;
+    \item audit cooperation;
+    \item model-version history;
+    \item subcontractor identification;
+    \item security testing.
+\end{itemize}
+
+Without evidence, the institution may be unable to determine what occurred.
+
+\section{Protection Strategy 4: Build Exit Plans}
+
+A critical provider should not become impossible to replace.
+
+Exit planning includes:
+
+\begin{itemize}
+    \item data portability;
+    \item alternative providers;
+    \item manual fallback;
+    \item contractual termination;
+    \item recovery of credentials;
+    \item migration testing.
+\end{itemize}
+
+This is vendor liquidity.
+
+The institution needs the ability to exit a dependency under stress.
+
+\section{Protection Strategy 5: Test Concentration Scenarios}
+
+Institutions should stress-test simultaneous failures.
+
+For example:
+
+\begin{quote}
+What if our cloud provider and primary AI provider are both unavailable for six hours during a volatile market?
+\end{quote}
+
+Or:
+
+\begin{quote}
+What if a widely used software component is found vulnerable by frontier AI and requires immediate remediation across many systems?
+\end{quote}
+
+The purpose is to understand common-mode risk.
+
+\section{Protection Strategy 6: Independent AI Control Layer}
+
+High-impact agent actions should pass through an institution-controlled gateway.
+
+The gateway can enforce:
+
+\begin{itemize}
+    \item identity;
+    \item allowed tools;
+    \item monetary limits;
+    \item permitted counterparties;
+    \item data restrictions;
+    \item approval requirements;
+    \item logging.
+\end{itemize}
+
+The model reasons.
+
+The institution authorizes.
+
+\section{Financial Practice: Third-Party Pricing Provider}
+
+Consider a fictional asset manager whose primary pricing vendor suffers a cyber outage at month-end.
+
+The firm cannot obtain validated closing prices for several hundred securities.
+
+The immediate problem is not only vendor availability.
+
+It affects:
+
+\begin{itemize}
+    \item NAV calculation;
+    \item client reporting;
+    \item risk measures;
+    \item performance reporting;
+    \item possible subscriptions and redemptions.
+\end{itemize}
+
+A well-governed firm has an alternative source, documented valuation hierarchy, escalation procedures, and evidence supporting any manual overrides.
+
+This is third-party cyber risk translated into financial practice.
+
+\section{Financial Practice: External AI Research Provider}
+
+Suppose an investment bank uses an external AI provider to analyze confidential transaction documents.
+
+The business owner focuses on analytical quality.
+
+Cyber and governance teams must ask additional questions:
+
+\begin{itemize}
+    \item Where are the documents processed?
+    \item Who can access them?
+    \item Are outputs retained?
+    \item Does the model provider use the information for training?
+    \item What happens if the model changes?
+    \item Which subcontractors participate?
+    \item Can the institution export its records?
+\end{itemize}
+
+The AI system has become part of the confidentiality architecture of the transaction.
+
+\section{Financial Practice: Autonomous Vendor-Management Agent}
+
+A fictional bank deploys an agent that reviews vendors, reads contracts, tracks incidents, and recommends risk ratings.
+
+Initially, the agent is advisory.
+
+Management later allows it to automatically suspend vendor API credentials when it detects a serious risk.
+
+The agent now possesses operational authority.
+
+A false positive could disable a critical service.
+
+The institution therefore needs:
+
+\begin{itemize}
+    \item confidence thresholds;
+    \item critical-vendor exceptions;
+    \item human approval for major suspensions;
+    \item complete logging;
+    \item rapid rollback.
+\end{itemize}
+
+The lesson is the same throughout the book:
+
+\begin{equation}
+\text{Intelligence}
+\neq
+\text{Authority}.
+\end{equation}
+
+\section{Mini Case: Common AI Dependency}
+
+A fictional financial group operates:
+
+\begin{itemize}
+    \item an AI research assistant;
+    \item an AI compliance assistant;
+    \item a treasury forecasting agent;
+    \item a software-development assistant;
+    \item a customer-service agent.
+\end{itemize}
+
+All five use the same frontier-model provider.
+
+The business units initially treat them as five separate systems.
+
+From a concentration-risk perspective, they are one dependency.
+
+A material provider outage or model-behavior problem can affect all five functions simultaneously.
+
+The group should therefore evaluate aggregate exposure.
+
+A useful measure is:
+
+\begin{equation}
+E_{\text{provider}}
+=
+\sum_{j=1}^{n}
+w_j C_j,
+\end{equation}
+
+where \(w_j\) represents dependence and \(C_j\) the criticality of service \(j\).
+
+The precise numerical score is less important than the discipline of aggregation.
+
+\begin{risklens}
+Third-party AI risk should be governed like concentration risk in finance. The institution must understand not only the probability that one vendor fails but also how many important activities fail together.
+\end{risklens}
+
+\section{Safe Notebook Lab}
+
+\begin{notebooklab}
+The companion notebook should create a synthetic governance inventory for a fictional financial institution.
+
+Students can define:
+\begin{enumerate}
+    \item ten financial business services;
+    \item several technology vendors;
+    \item two AI model providers;
+    \item five autonomous agents;
+    \item data dependencies;
+    \item tool permissions;
+    \item business owners;
+    \item control owners;
+    \item recovery alternatives.
+\end{enumerate}
+
+The notebook should calculate simple concentration indicators and identify:
+\begin{itemize}
+    \item single points of failure;
+    \item agents with excessive authority;
+    \item services dependent on the same vendor;
+    \item systems without fallback;
+    \item missing ownership.
+\end{itemize}
+
+A second exercise can simulate loss of one provider and estimate which business processes become unavailable.
+
+The notebook should remain entirely synthetic and should not connect to external vendor environments or real institutional systems.
+\end{notebooklab}
+
+\section{A Pragmatic Governance Checklist}
+
+Boards, risk committees, and senior management should ask:
+
+\begin{enumerate}
+    \item Which AI and cyber systems are material to the institution?
+    \item Who owns each system and its financial consequences?
+    \item Which agents possess economic authority?
+    \item Which vendors support multiple critical services?
+    \item Which dependencies create common-mode failure?
+    \item Are critical AI models version-controlled and tested before upgrades?
+    \item Are agent tools and permissions independently governed?
+    \item Is persistent agent memory controlled and auditable?
+    \item Are third-party incidents contractually reportable?
+    \item Can the institution reconstruct agent and vendor actions after an incident?
+    \item Does every critical provider have a credible exit or fallback plan?
+    \item Are AI-specific scenarios included in business-continuity testing?
+    \item Can management stop an autonomous system without relying on the system itself?
+\end{enumerate}
+
+\section{Chapter Summary}
+
+The main lessons of this chapter are:
+
+\begin{enumerate}
+    \item Cybersecurity and AI risk belong to institutional governance because their consequences affect financial obligations, clients, markets, and strategy.
+    \item Technology ownership and risk ownership are different.
+    \item The three-lines model remains useful, but AI systems require explicit business ownership, risk oversight, and independent assurance.
+    \item Boards should govern material exposure, authority, concentration, resilience, and evidence rather than technical implementation.
+    \item Frontier cyber capability makes governance itself a defensive control.
+    \item The relevant unit of AI risk is the full agentic system: model, tools, data, permissions, autonomy, coordination, and governance.
+    \item Typical AI-enabled governance threats include exploitation of trust relationships, third-party dependencies, software supply chains, delegated authority, and agent-to-agent trust.
+    \item AI model providers may become critical vendors and concentration points.
+    \item Agent ecosystems create new supply chains involving models, orchestration frameworks, memory systems, tools, and cloud providers.
+    \item Material agents require inventories, identities, permissions, ownership, limits, monitoring, and kill procedures.
+    \item Critical vendor contracts should preserve evidence, incident notification, portability, and exit rights.
+    \item High-impact agent actions should pass through institution-controlled authorization layers.
+    \item Third-party AI exposure should be aggregated across business units rather than assessed one application at a time.
+\end{enumerate}
+
+\section{Review Questions}
+
+\begin{enumerate}
+    \item Why is cybersecurity not simply an IT risk?
+    \item What is the difference between technology ownership and risk ownership?
+    \item How does the three-lines framework apply to autonomous AI systems?
+    \item Which questions should a board ask about material AI agents?
+    \item Why is the full agentic system a better unit of risk than the model alone?
+    \item How can AI increase third-party and supply-chain risk?
+    \item What is agent-to-agent trust risk?
+    \item Why should AI model providers be treated as potentially critical vendors?
+    \item What is model-version risk?
+    \item Why should persistent agent memory be governed explicitly?
+    \item What does it mean to contract for evidence?
+    \item Why is an exit plan important for critical AI and cloud providers?
+    \item In the common-provider case, why are five applications potentially one concentration exposure?
+\end{enumerate}
