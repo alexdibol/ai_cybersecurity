@@ -107,20 +107,20 @@ Each notebook contains:
 
 ### The Safe Lab collection: 10 progressive Colab notebooks
 
-The new Safe Lab series moves from a baseline cyberattack framework to advanced experiments in adaptive red–blue interaction, agent mutation, trust poisoning, compromised semantic control planes, state equivocation, and causal recovery. Every notebook is designed for controlled pedagogical use with synthetic systems and explicit governance constraints.
+The Safe Lab series moves from the simplest possible integrity-control example—protecting one synthetic financial record—to advanced experiments in adaptive red–blue interaction, agent mutation, trust poisoning, compromised semantic control planes, state equivocation, and causal recovery. Every notebook is designed for controlled pedagogical use with synthetic systems and explicit governance constraints.
 
 | Lab | Focus |
 |---|---|
-| 1 | [Baseline cyberattack framework](./safe_lab_notebooks/Chapter_1_Baseline%20Cyberatack%20Framework) |
-| 2 | [AI financial-integrity Safe Notebook Lab](./safe_lab_notebooks/Chapter_2_Safe_Notebook_Lab_AI_Financial_Integrity.ipynb) |
-| 3 | [Black-box autonomous red-team lab](./safe_lab_notebooks/Chapter_3_Black_Box_Autonomous_Red_Team_Lab.ipynb) |
-| 4 | [Adaptive red-team agent](./safe_lab_notebooks/Chapter_4_Safe_Notebook_Lab_with_Adaptive_Red_Team_Agent.ipynb) |
-| 5 | [Three-round advanced adversarial cognition loop](./safe_lab_notebooks/Chapter_5_Advanced_Adversarial_Cognition_Loop_3_round_version.ipynb) |
-| 6 | [Advanced adversarial cognition with red–blue interaction](./safe_lab_notebooks/Chapter_6_Advanced_Adversarial_Cognition%20with%20Red%20and%20Blue%20interaction.ipynb) |
-| 7 | [Six-round autonomous email-agent intrusion lab](./safe_lab_notebooks/Chapter_7_Autonomous_Email_Agent_Intrusion_6_Round_Red_Blue_Lab.ipynb) |
-| 8 | [Agent mutation, transitive-trust poisoning, and deterministic containment](./safe_lab_notebooks/Chapter_8_Agent_Mutation_Transitive_Trust_Poisoning_Deterministic_Containment.ipynb) |
-| 9 | [Semantic control-plane compromise, poisoned memory, and false consensus](./safe_lab_notebooks/Chapter_9_Semantic_Control_Plane_Compromise_Poisoned_Memory_False_Consensus.ipynb) |
-| 10 | [Capstone: trust-plane cascade, state equivocation, and causal recovery](./safe_lab_notebooks/Chapter_10_Capstone_Trust_Plane_Cascade_State_Equivocation_and_Causal_Recovery.ipynb) |
+| 1 | [The simplest cybersecurity foundation: protecting one financial record](https://github.com/alexdibol/ai_cybersecurity/blob/main/safe_lab_notebooks/Chapter_1_Simplest_Cybersecurity_Foundation.ipynb) |
+| 2 | [Agentic AI, prompt injection, and financial-integrity controls](https://github.com/alexdibol/ai_cybersecurity/blob/main/safe_lab_notebooks/Chapter_2_Safe_Notebook_Lab_AI_Financial_Integrity.ipynb) |
+| 3 | [Black-box autonomous red-team lab](https://github.com/alexdibol/ai_cybersecurity/blob/main/safe_lab_notebooks/Chapter_3_Black_Box_Autonomous_Red_Team_Lab.ipynb) |
+| 4 | [Adaptive red-team agent in a closed synthetic environment](https://github.com/alexdibol/ai_cybersecurity/blob/main/safe_lab_notebooks/Chapter_4_Safe_Notebook_Lab_with_Adaptive_Red_Team_Agent.ipynb) |
+| 5 | [Three-round, budget-controlled adversarial cognition loop](https://github.com/alexdibol/ai_cybersecurity/blob/main/safe_lab_notebooks/Chapter_5_Advanced_Adversarial_Cognition_Loop_3_round_version.ipynb) |
+| 6 | [Six-round adversarial cognition with red–blue interaction](https://github.com/alexdibol/ai_cybersecurity/blob/main/safe_lab_notebooks/Chapter_6_Advanced_Adversarial_Cognition%20with%20Red%20and%20Blue%20interaction.ipynb) |
+| 7 | [Autonomous email-agent intrusion and trading-privilege containment](https://github.com/alexdibol/ai_cybersecurity/blob/main/safe_lab_notebooks/Chapter_7_Autonomous_Email_Agent_Intrusion_6_Round_Red_Blue_Lab.ipynb) |
+| 8 | [Agent mutation, transitive-trust poisoning, and deterministic containment](https://github.com/alexdibol/ai_cybersecurity/blob/main/safe_lab_notebooks/Chapter_8_Agent_Mutation_Transitive_Trust_Poisoning_Deterministic_Containment.ipynb) |
+| 9 | [Semantic control-plane compromise, poisoned memory, and false consensus](https://github.com/alexdibol/ai_cybersecurity/blob/main/safe_lab_notebooks/Chapter_9_Semantic_Control_Plane_Compromise_Poisoned_Memory_False_Consensus.ipynb) |
+| 10 | [Capstone: trust-plane cascade, state equivocation, and causal recovery](https://github.com/alexdibol/ai_cybersecurity/blob/main/safe_lab_notebooks/Chapter_10_Capstone_Trust_Plane_Cascade_State_Equivocation_and_Causal_Recovery.ipynb) |
 
 [Browse the complete Safe Lab notebook collection](./safe_lab_notebooks/)
 
