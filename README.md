@@ -4,7 +4,7 @@
 
 **Book, Safe Lab research paper, and applied Colab notebook collections for financial practitioners**
 
-[Read the book](./BOOK%20PRINCIPLES%20OF%20CYBER%20SECURITY.pdf) · [Read the Safe Lab paper](./SAFE%20LAB%20PAPER%20GOVERNING%20AUTONOMOUS%20CYBER%20RISK.pdf) · [Explore the 10 Safe Lab notebooks](./safe_lab_notebooks/) · [Open the foundational Colab collection](https://drive.google.com/drive/folders/13xQro66DUiSi546Ef0GsMgj1gu_Q_dF2)
+[Read the book](./BOOK%20PRINCIPLES%20OF%20CYBER%20SECURITY.pdf) · [Open the 10 book-companion notebooks](./notebooks/) · [Read the Safe Lab paper](./SAFE%20LAB%20PAPER%20GOVERNING%20AUTONOMOUS%20CYBER%20RISK.pdf) · [Explore the 10 Safe Lab notebooks](./safe_lab_notebooks/)
 
 ---
 
@@ -63,16 +63,16 @@ Governance-first does not mean governance-only. Effective governance must be tra
 
 | Stage | Chapter | Central question | Financial-practice outcome |
 |---|---|---|---|
-| 1. Foundations | [1. Cybersecurity Without Mystification](./notebooks/ch01_cybersecurity_without_mystification_full.tex) | What is cyber risk in business and financial terms? | Connect assets, threats, vulnerabilities, controls, residual exposure, and loss. |
-| 2. Threat objectives | [2. What Attackers Try to Achieve](./notebooks/ch02_what_attackers_try_to_achieve_full.tex) | What business outcomes do attackers pursue? | Interpret confidentiality, integrity, availability, fraud, disruption, and monetization as risk channels. |
-| 3. Defensive visibility | [3. What a Defensive Platform Actually Sees](./notebooks/ch03_what_a_defensive_platform_sees_full.tex) | How does telemetry become an alert, case, incident, and management decision? | Distinguish raw events from decision-useful evidence and understand false-positive and false-negative trade-offs. |
-| 4. Identity and authority | [4. Identity, Passwords, and Access Risk](./notebooks/ch04_identity_passwords_access_risk_full.tex) | Who—or what—is allowed to act? | Evaluate authentication, authorization, least privilege, segregation of duties, privileged access, and machine identities. |
-| 5. Applications and integrity | [5. Applications, Data, and Integrity Risk](./notebooks/ch05_applications_data_integrity_risk_full.tex) | Can systems, data, prompts, memory, or tools be manipulated? | Recognize integrity risk, prompt injection, memory poisoning, tool misuse, and controls over AI-enabled workflows. |
-| 6. Detection and operations | [6. Detection, Monitoring, and Security Operations](./notebooks/ch06_detection_monitoring_security_operations_full.tex) | How can an institution detect fast, adaptive, AI-enabled threats? | Connect security operations, behavioral detection, vulnerability discovery, triage, and response priorities. |
-| 7. Incident resilience | [7. Incident Response and Business Continuity](./notebooks/ch07_incident_response_business_continuity_full.tex) | How should the institution decide and act during a rapidly evolving incident? | Prepare escalation, containment, eradication, recovery, continuity, communication, and post-incident learning. |
-| 8. Risk measurement | [8. Quantifying Cyber and AI-Enabled Operational Risk](./notebooks/ch08_quantifying_cyber_operational_risk_full.tex) | How can uncertainty be translated into decision-relevant estimates? | Model frequency, severity, residual risk, scenarios, control effects, and AI-driven capability multipliers. |
-| 9. Institutional governance | [9. Governance, Third Parties, and Accountability](./notebooks/ch09_governance_third_parties_accountability_full.tex) | Who owns the risk across the institution and its ecosystem? | Apply the three lines, board oversight, risk appetite, third-party governance, and system-level accountability. |
-| 10. Integrated practice | [10. A Finance Professional's Cyber-Risk Playbook](./notebooks/ch10_finance_professional_cyber_risk_playbook_full.tex) | How should a financial professional bring all the elements together? | Use an integrated understand–assess–control–monitor–respond–learn playbook. |
+| 1. Foundations | [1. Cybersecurity Without Mystification](./notebooks/CH01_Cybersecurity_Without_Mystification.ipynb) | What is cyber risk in business and financial terms? | Connect assets, threats, vulnerabilities, controls, residual exposure, and loss. |
+| 2. Threat objectives | [2. What Attackers Try to Achieve](./notebooks/CH02_What_Attackers_Try_to_Achieve.ipynb) | What business outcomes do attackers pursue? | Interpret confidentiality, integrity, availability, fraud, disruption, and monetization as risk channels. |
+| 3. Defensive visibility | [3. What a Defensive Platform Actually Sees](./notebooks/CH03_What_a_Defensive_Platform_Actually_Sees.ipynb) | How does telemetry become an alert, case, incident, and management decision? | Distinguish raw events from decision-useful evidence and understand false-positive and false-negative trade-offs. |
+| 4. Identity and authority | [4. Identity, Passwords, and Access Risk](./notebooks/CH04_Identity_Passwords_and_Access_Risk_in_the_Age_of_Agentic_AI.ipynb) | Who—or what—is allowed to act? | Evaluate authentication, authorization, least privilege, segregation of duties, privileged access, and machine identities. |
+| 5. Applications and integrity | [5. Applications, Data, and Integrity Risk](./notebooks/CH05_Applications_Data_and_Integrity_Risk_in_the_Age_of_Agentic_AI.ipynb) | Can systems, data, prompts, memory, or tools be manipulated? | Recognize integrity risk, prompt injection, memory poisoning, tool misuse, and controls over AI-enabled workflows. |
+| 6. Detection and operations | [6. Detection, Monitoring, and Security Operations](./notebooks/CH06_Detection_Monitoring_and_Security_Operations_in_the_Age_of_AI.ipynb) | How can an institution detect fast, adaptive, AI-enabled threats? | Connect security operations, behavioral detection, vulnerability discovery, triage, and response priorities. |
+| 7. Incident resilience | [7. Incident Response and Business Continuity](./notebooks/CH07_Incident_Response_and_Business_Continuity_in_the_Age_of_Agentic_AI.ipynb) | How should the institution decide and act during a rapidly evolving incident? | Prepare escalation, containment, eradication, recovery, continuity, communication, and post-incident learning. |
+| 8. Risk measurement | [8. Quantifying Cyber and AI-Enabled Operational Risk](./notebooks/CH08_Quantifying_Cyber_and_AI_Enabled_Operational_Risk.ipynb) | How can uncertainty be translated into decision-relevant estimates? | Model frequency, severity, residual risk, scenarios, control effects, and AI-driven capability multipliers. |
+| 9. Institutional governance | [9. Governance, Third Parties, and Accountability](./notebooks/CH09_Governance_Third_Parties_and_Institutional_Accountability_in_the_Age_of_Agentic_AI.ipynb) | Who owns the risk across the institution and its ecosystem? | Apply the three lines, board oversight, risk appetite, third-party governance, and system-level accountability. |
+| 10. Integrated practice | [10. A Finance Professional's Cyber-Risk Playbook](./notebooks/CH10_A_Finance_Professional_s_Cyber_Risk_Playbook_in_the_Age_of_Agentic_AI.ipynb) | How should a financial professional bring all the elements together? | Use an integrated understand–assess–control–monitor–respond–learn playbook. |
 
 ---
 
@@ -103,7 +103,7 @@ Each notebook contains:
 - interpretation for financial decision-makers;
 - a concluding synthesis.
 
-[Open the complete Colab notebook collection](https://drive.google.com/drive/folders/13xQro66DUiSi546Ef0GsMgj1gu_Q_dF2)
+[Open the complete 10-notebook book-companion collection](./notebooks/)
 
 ### The Safe Lab collection: 10 progressive Colab notebooks
 
@@ -170,6 +170,6 @@ Financial-markets practitioner, researcher, and educator
 
 ## Begin the course
 
-Start with the [complete book](./BOOK%20PRINCIPLES%20OF%20CYBER%20SECURITY.pdf), continue with the [Safe Lab paper](./SAFE%20LAB%20PAPER%20GOVERNING%20AUTONOMOUS%20CYBER%20RISK.pdf), and then work progressively through the [10 Safe Lab notebooks](./safe_lab_notebooks/).
+Start with the [complete book](./BOOK%20PRINCIPLES%20OF%20CYBER%20SECURITY.pdf) and its [10 companion notebooks](./notebooks/). Then continue with the [Safe Lab paper](./SAFE%20LAB%20PAPER%20GOVERNING%20AUTONOMOUS%20CYBER%20RISK.pdf) and work progressively through the [10 Safe Lab notebooks](./safe_lab_notebooks/).
 
 Cybersecurity in the age of autonomous AI is not only a technical challenge. It is a question of institutional design, financial responsibility, and trust.
