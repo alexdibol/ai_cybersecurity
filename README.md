@@ -2,9 +2,9 @@
 
 ## A Pedagogical Introduction to Agentic Threats, Financial Risk, and Governance-First Defense
 
-**Course, book, and applied Colab notebook collection for financial practitioners**
+**Book, Safe Lab research paper, and applied Colab notebook collections for financial practitioners**
 
-[Explore the book chapters](./notebooks/) · [Open the complete Colab notebook collection](https://drive.google.com/drive/folders/13xQro66DUiSi546Ef0GsMgj1gu_Q_dF2)
+[Read the book](./BOOK%20PRINCIPLES%20OF%20CYBER%20SECURITY.pdf) · [Read the Safe Lab paper](./SAFE%20LAB%20PAPER%20GOVERNING%20AUTONOMOUS%20CYBER%20RISK.pdf) · [Explore the 10 Safe Lab notebooks](./safe_lab_notebooks/) · [Open the foundational Colab collection](https://drive.google.com/drive/folders/13xQro66DUiSi546Ef0GsMgj1gu_Q_dF2)
 
 ---
 
@@ -76,13 +76,19 @@ Governance-first does not mean governance-only. Effective governance must be tra
 
 ---
 
-## The book and the notebooks
+## The complete learning architecture
 
 ### The book
 
-The ten chapters build progressively from first principles to an integrated professional playbook. Technical concepts are translated into financial language, and each major topic is examined through the emerging AI threat lens.
+The ten chapters build progressively from first principles to an integrated professional playbook. Technical concepts are translated into financial language, and each major topic is examined through the emerging AI threat lens. The repository provides the professionally typeset book as a single PDF.
 
-[Browse all LaTeX chapter sources](./notebooks/)
+[Read or download the complete book](./BOOK%20PRINCIPLES%20OF%20CYBER%20SECURITY.pdf)
+
+### The Safe Lab paper
+
+*Governing Autonomous Cyber Risk* explains the intellectual and governance architecture of the Safe Lab. It shows how increasingly capable autonomous and multi-agent systems can be examined through synthetic, budget-controlled, non-operational experiments while preserving clear safety boundaries, human accountability, deterministic controls, and evidence suitable for senior decision-makers.
+
+[Read or download the Safe Lab paper](./SAFE%20LAB%20PAPER%20GOVERNING%20AUTONOMOUS%20CYBER%20RISK.pdf)
 
 ### The accompanying Colab notebooks
 
@@ -98,6 +104,25 @@ Each notebook contains:
 - a concluding synthesis.
 
 [Open the complete Colab notebook collection](https://drive.google.com/drive/folders/13xQro66DUiSi546Ef0GsMgj1gu_Q_dF2)
+
+### The Safe Lab collection: 10 progressive Colab notebooks
+
+The new Safe Lab series moves from a baseline cyberattack framework to advanced experiments in adaptive red–blue interaction, agent mutation, trust poisoning, compromised semantic control planes, state equivocation, and causal recovery. Every notebook is designed for controlled pedagogical use with synthetic systems and explicit governance constraints.
+
+| Lab | Focus |
+|---|---|
+| 1 | [Baseline cyberattack framework](./safe_lab_notebooks/Chapter_1_Baseline%20Cyberatack%20Framework) |
+| 2 | [AI financial-integrity Safe Notebook Lab](./safe_lab_notebooks/Chapter_2_Safe_Notebook_Lab_AI_Financial_Integrity.ipynb) |
+| 3 | [Black-box autonomous red-team lab](./safe_lab_notebooks/Chapter_3_Black_Box_Autonomous_Red_Team_Lab.ipynb) |
+| 4 | [Adaptive red-team agent](./safe_lab_notebooks/Chapter_4_Safe_Notebook_Lab_with_Adaptive_Red_Team_Agent.ipynb) |
+| 5 | [Three-round advanced adversarial cognition loop](./safe_lab_notebooks/Chapter_5_Advanced_Adversarial_Cognition_Loop_3_round_version.ipynb) |
+| 6 | [Advanced adversarial cognition with red–blue interaction](./safe_lab_notebooks/Chapter_6_Advanced_Adversarial_Cognition%20with%20Red%20and%20Blue%20interaction.ipynb) |
+| 7 | [Six-round autonomous email-agent intrusion lab](./safe_lab_notebooks/Chapter_7_Autonomous_Email_Agent_Intrusion_6_Round_Red_Blue_Lab.ipynb) |
+| 8 | [Agent mutation, transitive-trust poisoning, and deterministic containment](./safe_lab_notebooks/Chapter_8_Agent_Mutation_Transitive_Trust_Poisoning_Deterministic_Containment.ipynb) |
+| 9 | [Semantic control-plane compromise, poisoned memory, and false consensus](./safe_lab_notebooks/Chapter_9_Semantic_Control_Plane_Compromise_Poisoned_Memory_False_Consensus.ipynb) |
+| 10 | [Capstone: trust-plane cascade, state equivocation, and causal recovery](./safe_lab_notebooks/Chapter_10_Capstone_Trust_Plane_Cascade_State_Equivocation_and_Causal_Recovery.ipynb) |
+
+[Browse the complete Safe Lab notebook collection](./safe_lab_notebooks/)
 
 A productive learning sequence is:
 
@@ -145,6 +170,6 @@ Financial-markets practitioner, researcher, and educator
 
 ## Begin the course
 
-Start with [Chapter 1: Cybersecurity Without Mystification](./notebooks/ch01_cybersecurity_without_mystification_full.tex), then open the corresponding exercise in the [Colab notebook collection](https://drive.google.com/drive/folders/13xQro66DUiSi546Ef0GsMgj1gu_Q_dF2).
+Start with the [complete book](./BOOK%20PRINCIPLES%20OF%20CYBER%20SECURITY.pdf), continue with the [Safe Lab paper](./SAFE%20LAB%20PAPER%20GOVERNING%20AUTONOMOUS%20CYBER%20RISK.pdf), and then work progressively through the [10 Safe Lab notebooks](./safe_lab_notebooks/).
 
 Cybersecurity in the age of autonomous AI is not only a technical challenge. It is a question of institutional design, financial responsibility, and trust.
